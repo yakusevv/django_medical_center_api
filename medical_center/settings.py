@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'appointment_requests.apps.AppointmentRequestsConfig',
     'doctors.apps.DoctorsConfig',
     'insurance_companies.apps.InsuranceCompaniesConfig',
-    'invoices.apps.InvoicesConfig',
+    'reports.apps.ReportsConfig',
     'rest_framework',
     'rest_framework_jwt',
     'corsheaders',

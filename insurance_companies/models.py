@@ -29,7 +29,7 @@ class Tariff(models.Model):
 
 class VisitTariff(models.Model):
     tariff = models.ForeignKey(Tariff, on_delete=models.CASCADE, verbose_name=_("Tariff"))
-    type_of_visit = models.ForeignKey('invoices.TypeOfVisit', on_delete=models.CASCADE, verbose_name=_("Type of visit"))
+    type_of_visit = models.ForeignKey('reports.TypeOfVisit', on_delete=models.CASCADE, verbose_name=_("Type of visit"))
     price = models.DecimalField(max_digits=8, decimal_places=2, verbose_name=_("Price"))
 
     class Meta:
