@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'territories.apps.TerritoriesConfig',
     'appointment_requests.apps.AppointmentRequestsConfig',
-    'doctors.apps.DoctorsConfig',
+    'profiles.apps.ProfilesConfig',
     'insurance_companies.apps.InsuranceCompaniesConfig',
     'reports.apps.ReportsConfig',
     'rest_framework',

@@ -2,12 +2,10 @@ import os
 import shutil
 
 from django.db import models
-from django.shortcuts import reverse
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from django.db.models.signals import post_delete, pre_save
 from django.dispatch import receiver
-from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
 
 
@@ -100,7 +98,7 @@ class Report(models.Model):
     prescription = models.TextField(max_length=700, verbose_name=_("Prescription"))
     checked = models.BooleanField(default=False, verbose_name=_("Is checked"))
     case = models.OneToOneField(
-                                'appointment_requests.Case',
+                                'appointment_requests.InsuranceCase',
                                 on_delete=models.PROTECT,
                                 related_name='report',
                                 verbose_name=_("Report request")
@@ -151,7 +149,7 @@ class Report(models.Model):
     @property
     def get_number_of_visit(self):
         country = self.city.district.region.country
-        reports_queryset = Invoice.objects.filter(
+        reports_queryset = Report.objects.filter(
             city__district__region__country=country,
             company_ref_number=self.company_ref_number,
             patients_first_name=self.patients_first_name,
