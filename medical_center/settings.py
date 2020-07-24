@@ -151,6 +151,15 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
+LANGUAGES = (
+    ('en', 'English'),
+    ('ru', 'Russian'),
+)
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
+
 USE_I18N = True
 
 USE_L10N = True
